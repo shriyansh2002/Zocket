@@ -39,7 +39,7 @@ export default function Home() {
     }
     try {
       console.log("Registering new user...");
-      const res = await axios.post("http://lucky-spontaneity-production.up.railway.app/register", {
+      const res = await axios.post("https://lucky-spontaneity-production.up.railway.app/register", {
         username: registerUsername,
         password: registerPassword,
       });
@@ -61,7 +61,7 @@ export default function Home() {
     }
     try {
       console.log("Sending login request...");
-      const res = await axios.post("http://lucky-spontaneity-production.up.railway.app/login", {
+      const res = await axios.post("https://lucky-spontaneity-production.up.railway.app/login", {
         username: loginUsername,
         password: loginPassword,
       });
@@ -80,7 +80,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://lucky-spontaneity-production.up.railway.app/tasks", {
+      const res = await axios.get("https://lucky-spontaneity-production.up.railway.app/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("Tasks fetched:", res.data);
@@ -98,7 +98,7 @@ export default function Home() {
     }
     try {
       const res = await axios.post(
-        "http://lucky-spontaneity-production.up.railway.app/tasks",
+        "https://lucky-spontaneity-production.up.railway.app/tasks",
         { title, description },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -116,7 +116,7 @@ export default function Home() {
     setIsLoadingSuggestions(true);
     try {
       console.log("Fetching suggestions...");
-      const res = await axios.get("lucky-spontaneity-production.up.railway.app/suggest-tasks", {
+      const res = await axios.get("https://lucky-spontaneity-production.up.railway.app/suggest-tasks", {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
