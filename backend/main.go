@@ -69,7 +69,7 @@ func main() {
     app := fiber.New()
 
     app.Use(cors.New(cors.Config{
-        AllowOrigins:     "http://localhost:3000",
+        AllowOrigins:     "http://lucky-spontaneity-production.up.railway.app",
         AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
         AllowMethods:     "GET, POST, PUT, DELETE, OPTIONS",
         AllowCredentials: true,

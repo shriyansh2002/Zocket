@@ -20,7 +20,7 @@ export default function Home() {
     if (token) {
       console.log("Token set, fetching tasks:", token);
       fetchTasks();
-      const ws = new WebSocket("ws://localhost:3001/ws/updates");
+      const ws = new WebSocket("ws://lucky-spontaneity-production.up.railway.app/ws/updates");
       ws.onopen = () => console.log("WebSocket connected");
       ws.onmessage = (event) => {
         const task = JSON.parse(event.data);
@@ -39,7 +39,7 @@ export default function Home() {
     }
     try {
       console.log("Registering new user...");
-      const res = await axios.post("http://localhost:3001/register", {
+      const res = await axios.post("http://lucky-spontaneity-production.up.railway.app/register", {
         username: registerUsername,
         password: registerPassword,
       });
@@ -61,7 +61,7 @@ export default function Home() {
     }
     try {
       console.log("Sending login request...");
-      const res = await axios.post("http://localhost:3001/login", {
+      const res = await axios.post("http://lucky-spontaneity-production.up.railway.app/login", {
         username: loginUsername,
         password: loginPassword,
       });
@@ -80,7 +80,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/tasks", {
+      const res = await axios.get("http://lucky-spontaneity-production.up.railway.app/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("Tasks fetched:", res.data);
@@ -98,7 +98,7 @@ export default function Home() {
     }
     try {
       const res = await axios.post(
-        "http://localhost:3001/tasks",
+        "http://lucky-spontaneity-production.up.railway.app/tasks",
         { title, description },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -116,7 +116,7 @@ export default function Home() {
     setIsLoadingSuggestions(true);
     try {
       console.log("Fetching suggestions...");
-      const res = await axios.get("http://localhost:3001/suggest-tasks", {
+      const res = await axios.get("http://lucky-spontaneity-production.up.railway.app/suggest-tasks", {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
