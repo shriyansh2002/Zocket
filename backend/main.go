@@ -51,17 +51,20 @@ func main() {
     }
 
     // Database connection
-    db, err = sql.Open("postgres", "user=postgres password=pass123 dbname=task_manager sslmode=disable")
-    if err != nil {
-        log.Fatal("Database connection error: ", err)
-    }
-    defer db.Close()
+    dbURL := os.Getenv("DATABASE_URL")
+    db, err = sql.Open("postgres", dbURL)
 
-    // Test database connection
-    if err := db.Ping(); err != nil {
-        log.Fatal("Database ping failed: ", err)
-    }
-    log.Println("Successfully connected to database")
+    // db, err = sql.Open("postgres", "user=postgres password=pass123 dbname=task_manager sslmode=disable")
+    // if err != nil {
+    //     log.Fatal("Database connection error: ", err)
+    // }
+    // defer db.Close()
+
+    // // Test database connection
+    // if err := db.Ping(); err != nil {
+    //     log.Fatal("Database ping failed: ", err)
+    // }
+    // log.Println("Successfully connected to database")
 
     app := fiber.New()
 
