@@ -116,7 +116,7 @@ export default function Home() {
     setIsLoadingSuggestions(true);
     try {
       console.log("Fetching suggestions...");
-      const res = await axios.get("http://lucky-spontaneity-production.up.railway.app/suggest-tasks", {
+      const res = await axios.get("lucky-spontaneity-production.up.railway.app/suggest-tasks", {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
