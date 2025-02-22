@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postinstall": "chmod +x node_modules/.bin/next",
     "start": "next start"
   },
   "dependencies": {
