@@ -69,7 +69,7 @@ func main() {
     app := fiber.New()
 
     app.Use(cors.New(cors.Config{
-        AllowOrigins:     "zocket-plum.vercel.app",
+        AllowOrigins:     "https://zocket-plum.vercel.app/",
         AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
         AllowMethods:     "GET, POST, PUT, DELETE, OPTIONS",
         AllowCredentials: true,
