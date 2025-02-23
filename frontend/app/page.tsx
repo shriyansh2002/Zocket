@@ -20,7 +20,7 @@ export default function Home() {
     if (token) {
       console.log("Token set, fetching tasks:", token);
       fetchTasks();
-      const ws = new WebSocket("ws://lucky-spontaneity-production.up.railway.app/ws/updates");
+      const ws = new WebSocket("wss://lucky-spontaneity-production.up.railway.app/ws/updates");
       ws.onopen = () => console.log("WebSocket connected");
       ws.onmessage = (event) => {
         const task = JSON.parse(event.data);
