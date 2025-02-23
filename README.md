@@ -54,11 +54,9 @@ npm run dev
 
 Deployment
 
-Backend: (To be deployed on Render)
 
-Frontend: (To be deployed on Vercel)
 
-Live Demo Link: (Will be provided upon deployment)
+Live Demo Link: https://drive.google.com/drive/folders/1YeW4JB7pAauiwHt0BMM-u92AMf0RY7sJ
 
 How AI Helped
 
