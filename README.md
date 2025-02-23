@@ -1,4 +1,4 @@
-##AI Task Manager##
+*`AI Task Manager`*
 
 A real-time AI-powered task management system built in just 4 hours, leveraging cutting-edge technologies for rapid development and deployment.
 
